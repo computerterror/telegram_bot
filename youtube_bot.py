@@ -7,10 +7,10 @@ import youtube_dl
 import urllib
 import shutil
 from telebot import types
-bot = telebot.TeleBot('1890084498:AAFO2D4mSZJ9zHWBTz50h8emZMQ98HliQ4c') 
-path = '/home/guru/Рабочий стол/python_bot/videos'
+bot = telebot.TeleBot('') 
+path = ''
 url1 = ' '
-os.chdir('/home/guru/Рабочий стол/python_bot/videos/')
+os.chdir('')
 def downloadYouTube(videourl):
 
     ydl_opts = {}
@@ -18,7 +18,7 @@ def downloadYouTube(videourl):
         ydl.download([videourl])
 
 def remove_video():
-    sh.rm(sh.glob('/home/guru/Рабочий стол/python_bot/videos/*'))
+    sh.rm(sh.glob(''))
 @bot.message_handler(commands = ['start','help'])
 def send_welcome(message):
     bot.reply_to(message,f'Здарова, я бот, который с радостью поможет тебе скачать видео с YouTube!Для того чтобы скачать видео, просто напиши мне "/download"')
@@ -61,7 +61,7 @@ def callback_worker(call):
             #bot.send_message(call.message.chat.id, 'Ой, ошибочка вышла!Введите команду "/download" и отправьте ссылку снова.')
             print("Ой, ошибочка вышла!(2)")
     if call.data == "zadonatit":
-        bot.send_message(call.message.chat.id, 'Хотите помочь автору купить чашечку кофе? Если да, то держите реквизиты:\nТинькофф -> 4377 7237 4664 6011')
+        bot.send_message(call.message.chat.id, 'Хотите помочь автору купить чашечку кофе? Если да, то держите реквизиты:\nТинькофф -> ')
         print("Риквизиты отправлены!")
 #@bot.message_handler(content_types=['text'])
 #def get_message_text(message):
